@@ -1,0 +1,19 @@
+{
+  "name": "kafkaalpha",
+  "version": "1.0.0",
+  "description": "Demo for node-powered browser game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnPayment/KafkaAlpha.git"
+  },
+  "author": "John Payment",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnPayment/KafkaAlpha/issues"
+  },
+  "homepage": "https://github.com/JohnPayment/KafkaAlpha#readme"
+}
