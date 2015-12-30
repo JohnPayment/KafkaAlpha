@@ -4,7 +4,18 @@
   "description": "Demo for node-powered browser game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf lib",
+    "watch-js": "./node_modules/.bin/babel src -d lib --experimental -w",
+    "dev-server": "node lib/server/webpack",
+    "server": "forever start --uid \"onepage\" --killSignal=SIGTERM -a -p ./ -l log/forever.log -o log/out.log -e log/err.log lib/server/server.js",
+    "server-dev": "PORT=3000 nodemon lib/server/server",
+    "start": "npm run build && npm run build-webpack && node lib/server/server.js",
+    "start-pro": "npm run build && npm run build-webpack && npm run server",
+    "start-dev": "npm run watch-js  & npm run build-webpack-dev & npm run dev-server & npm run server-dev",
+    "stop": "forever stop lib/server/server.js",
+    "build": "npm run clean && ./node_modules/.bin/babel src -d lib --experimental",
+    "build-webpack": "webpack",
+    "build-webpack-dev": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +26,23 @@
   "bugs": {
     "url": "https://github.com/JohnPayment/KafkaAlpha/issues"
   },
-  "homepage": "https://github.com/JohnPayment/KafkaAlpha#readme"
+  "homepage": "https://github.com/JohnPayment/KafkaAlpha#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "babel": "^6.3.26",
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "forever": "^0.15.1",
+    "history": "^1.17.0",
+    "jade": "^1.11.0",
+    "mongoose": "^4.3.4",
+    "nodemon": "^1.8.1",
+    "password-hash": "^1.2.2",
+    "react": "^0.14.5",
+    "react-router": "^1.0.3",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
 }
