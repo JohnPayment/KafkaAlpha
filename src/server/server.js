@@ -41,8 +41,6 @@ app.get('/', function(req, res)
 		// Client-side variables.
 		var props = {userData: userData};
 
-		console.log(Handler)
-
 		let content = React.renderToString(<Handler userData={userData}/>);
 		res.render('index', {	content: content,
 								props: JSON.stringify(props),

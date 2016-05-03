@@ -8,12 +8,14 @@
  */
 import React from "react";
 
-export default class AppHandler extends React.Component {
+var SplashBody = require('./splashBody');
 
-	render() {
-
+export default class AppHandler extends React.Component
+{
+	render()
+	{
 		return	<div id="container">
-					{"halp"}
+					<SplashBody />
 				</div>
 	}
 }
