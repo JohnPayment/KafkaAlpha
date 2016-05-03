@@ -4,11 +4,7 @@
 TO DO LIST
 ==========
 
-Tier 1
- - Dry run Node app
-
 Tier 2
- - Set up splash page
  - Set up progress saving and redirection
 
 Tier 3
