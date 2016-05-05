@@ -1,0 +1,19 @@
+
+#app {
+	background: #000000;
+	background: linear-gradient(to bottom, #5555A5, #000000, #000000);
+
+	width: 100%;
+	min-width: 1080px;
+
+	margin: 0 auto;
+}
+
+#content {
+	background: #e5e5e5;
+	width: 100%;
+	max-width: 1080px;
+	min-width: 800px;
+
+	margin: 0 auto;
+}

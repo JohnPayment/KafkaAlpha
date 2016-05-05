@@ -24,13 +24,13 @@ var splashBody = React.createClass(
 
 		if(this.state.continue)
 		{
-			continueButton = <div className="StartButton" to={this.state.lastPage}>{"Continue"}</div>
+			continueButton = <div className="StartButton" to={this.state.lastPage}>{"Continue"}</div>;
 		}
 
 		return	<div>
 					<div className="Title">{"Kafka Alpha"}</div>
 					<div className="StartButtonContainer">
-						<Link className="StartButton" to="/level-0/bedroom">{"Start"}</Link>
+						<Link className="StartButton" to="/level-0/bedroom/">{"Start"}</Link>
 						{continueButton}
 					</div>
 				</div>;

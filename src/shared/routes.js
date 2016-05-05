@@ -13,9 +13,6 @@ import splashHandler from "./components/splashHandler";
 
 import levelHandler from "./components/levelHandler";
 import bedroomHandler from "./components/level-0/bedroom";
-//import AddUserHandler from "./components/AddUserHandler";
-//import LoginHandler from "./LoginHandler";
-//import PasswordHandler from "./components/PasswordHandler";
 
 export default (
 	<Route name="root" handler={ AppRouter } path="/">
@@ -24,7 +21,4 @@ export default (
 			<Route name="bedroom" handler={ bedroomHandler } path="bedroom/" />
 		</Route>
 	</Route>
-	/*<Route name="AddUser" handler={ AddUserHandler } path="Admin/AddUser" />
-	<Route name="Login" handler={ LoginHandler } path="Login" />
-	<Route name="Password" handler={ PasswordHandler } path="ChangePassword" />*/
 );

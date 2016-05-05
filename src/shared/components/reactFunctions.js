@@ -1,3 +1,4 @@
+import cookie from 'react-cookie';
 
 var resources = require('resources');
 
@@ -16,4 +17,9 @@ exports.truncateNumber = function(number)
 	}
 
 	return number;
+}
+
+exports.setContinuePoint = function(context)
+{
+	cookie.save("continue", context.context.router.getCurrentPathname());
 }
