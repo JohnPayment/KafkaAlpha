@@ -14,6 +14,9 @@ const app = express();
 app.set('views', './view/');
 app.set('view engine', 'jade');
 
+// Server Modules
+var bedroom = require('./level-0/bedroom');
+
 var resources = require('resources');
 
 // Server Modules
@@ -51,7 +54,7 @@ app.get('/', function(req, res)
 //----------------------------------------------------------------------------------------------------------------------
 // User Pages
 //----------------------------------------------------------------------------------------------------------------------
-//User(app, Router, routes, React);
+bedroom(app, Router, routes, React);
 
 // Redirect to Index Page on linking to a page which does not exist.
 app.use(function(req, res, next)

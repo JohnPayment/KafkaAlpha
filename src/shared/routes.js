@@ -11,6 +11,8 @@ import React from "react";
 import AppRouter from "./components/AppRouter";
 import splashHandler from "./components/splashHandler";
 
+import levelHandler from "./components/levelHandler";
+import bedroomHandler from "./components/level-0/bedroom";
 //import AddUserHandler from "./components/AddUserHandler";
 //import LoginHandler from "./LoginHandler";
 //import PasswordHandler from "./components/PasswordHandler";
@@ -18,6 +20,9 @@ import splashHandler from "./components/splashHandler";
 export default (
 	<Route name="root" handler={ AppRouter } path="/">
 		<DefaultRoute handler={ splashHandler } />
+		<Route name="level-0" handler={ levelHandler } path="level-0/">
+			<Route name="bedroom" handler={ bedroomHandler } path="bedroom/" />
+		</Route>
 	</Route>
 	/*<Route name="AddUser" handler={ AddUserHandler } path="Admin/AddUser" />
 	<Route name="Login" handler={ LoginHandler } path="Login" />

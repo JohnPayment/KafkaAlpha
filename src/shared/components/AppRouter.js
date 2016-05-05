@@ -1,10 +1,4 @@
-/*
- * Component: React
- * Module: AppRouter
- * Author: John Payment
- *
- * Notes: This is the highest level react component that renders stuff to page. It is essentially a container for
- */
+
 import React from "react";
 import {RouteHandler} from "react-router";
 

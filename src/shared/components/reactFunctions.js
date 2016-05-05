@@ -5,13 +5,13 @@ var resources = require('resources');
  *
  * number - The number to be truncated
  */
-exports.truncateNumber = function(number) {
-
-	if(number > 1000000) {
-
+exports.truncateNumber = function(number)
+{
+	if(number > 1000000)
+	{
 		return "" + (number / 1000000).toPrecision(3) + "M";
-	} else if(number >= 10000) {
-
+	} else if(number >= 10000)
+	{
 		return "" + (number / 1000).toPrecision(3) + "K";
 	}
 
