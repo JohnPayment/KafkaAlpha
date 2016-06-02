@@ -18,11 +18,6 @@ var gameObject = React.createClass(
 {
 	getInitialState: function()
 	{
-		if (typeof(window) == 'undefined')
-		{
-			global.window = new Object();
-		}
-
 		description = "";
 		image = "";
 		actions = [];
@@ -78,7 +73,7 @@ var gameObject = React.createClass(
 		{
 			if(this.checkActionConditions(this.state.actions[i]))
 			{
-				actions.push(<span className="gameObjectAction" style={{backgroundImage: "url(" + resources.IMAGE_DIR + this.state.actions[i].image + ")"}} onClick={this.state.actions[i].result}></span>);
+				actions.push(<span key={i} className="gameObjectAction" style={{backgroundImage: "url(" + resources.IMAGE_DIR + this.state.actions[i].image + ")"}} onClick={this.state.actions[i].result}></span>);
 			}
 		}
 

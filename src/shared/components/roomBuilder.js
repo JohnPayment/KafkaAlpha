@@ -9,8 +9,7 @@ var resources = require('resources');
  *               additional properties defined elsewhere.
  * 		posX - The object's horizontal position on the grid, from 0 to 9
  *		posY - The object's vertical position on the grid, from 0 to 9
- *		interactable - a boolean indicating whether this object is interactable
- *		image - the sprite rendered for the game object.
+ *		component - The actual gameobject component
  */
 var roomBuilder = React.createClass(
 {
@@ -37,7 +36,7 @@ var roomBuilder = React.createClass(
 
 		for(var i = 0; i < this.props.backgroundLayout.length; ++i)
 		{
-			rows.push(<span className="roomTileRow">{this.renderRow(i)}</span>);
+			rows.push(<span key={i} className="roomTileRow">{this.renderRow(i)}</span>);
 		}
 
 		return rows;
@@ -49,7 +48,7 @@ var roomBuilder = React.createClass(
 
 		for(var i = 0; i < this.props.backgroundLayout[index].length; ++i)
 		{
-			tiles.push(<span className="roomTile" style={this.renderTile(index, i)}>{this.renderObject(index, i)}</span>);
+			tiles.push(<span key={i} className="roomTile" style={this.renderTile(index, i)}>{this.renderObject(index, i)}</span>);
 		}
 
 		return tiles;
