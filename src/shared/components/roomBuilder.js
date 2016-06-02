@@ -66,7 +66,7 @@ var roomBuilder = React.createClass(
 		{
 			if(this.props.gameObjects[i].posX == posx && this.props.gameObjects[i].posY == posy)
 			{
-				return this.props.gameObjects[i].image;
+				return this.props.gameObjects[i].component;
 			}
 		}*/
 
