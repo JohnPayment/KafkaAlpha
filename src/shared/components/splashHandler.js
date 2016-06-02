@@ -7,7 +7,7 @@ export default class AppHandler extends React.Component
 {
 	render()
 	{
-		return	<div id="container">
+		return	<div id="content">
 					<SplashBody />
 				</div>
 	}

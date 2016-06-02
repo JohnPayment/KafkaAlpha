@@ -15,7 +15,7 @@ var playerStats = React.createClass(
 		return {};
 	},
 
-	render()
+	render: function()
 	{
 		return	<span className="map">
 					<span className="mapInterior">

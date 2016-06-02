@@ -57,10 +57,10 @@ app.get('/', function(req, res)
 bedroom(app, Router, routes, React);
 
 // Redirect to Index Page on linking to a page which does not exist.
-app.use(function(req, res, next)
+/*app.use(function(req, res, next)
 {
 	res.redirect("/");
-});
+});*/
 
 var server = app.listen(process.env.PORT, function ()
 {

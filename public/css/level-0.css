@@ -1,0 +1,93 @@
+.levelHeader {
+	width: 100%;
+}
+
+.map {
+	display: inline-block;
+	width: 45%;
+
+	background-color: #5f5f5f;
+
+	border-radius: 5px;
+
+	padding-bottom: 10px;
+	margin-left: 3%;
+	margin-right: 2%;
+}
+
+.statContainer {
+	display: inline-block;
+	width: 45%;
+
+	background-color: #5f5f5f;
+
+	border-radius: 5px;
+
+	padding-bottom: 10px;
+	margin-left: 2%;
+	margin-right: 3%;
+}
+
+.hpBar {
+	display: inline-block;
+
+	width: 98%;
+	height: 60px;
+
+	background: #555555;
+	background: linear-gradient(#222222, #888888);
+
+	border-radius: 30px;
+
+	margin-left: 1%;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.hpBarInterior {
+	display: inline-block;
+	height: 56px;
+
+	background: #f58585;
+
+	border-radius: 30px;
+	margin: 2px;
+}
+
+.spBarInterior {
+	display: inline-block;
+	height: 56px;
+
+	background: #8585f5;
+
+	border-radius: 30px;
+	margin: 2px;
+}
+
+.room {
+	display: block;
+	width: 820px;
+
+	background: #222222;
+
+	padding: 10px;
+	border-radius: 20px;
+
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.roomTileRow {
+	display: block;
+	margin: 0 auto;
+}
+
+.roomTile {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+
+	background: #222222;
+	border: 1px solid #000000;
+}

@@ -6,25 +6,22 @@ var splashBody = React.createClass(
 {
 	getInitialState: function()
 	{
-		if (typeof(window) == 'undefined')
-		{
-			global.window = new Object();
-		}
+		var lastPage = cookie.load("continue", {path: "KafkaAlpha"});
+		var cont = (lastPage != null);
 
-		var lastPage = cookie.load('continue');
-		var cont = lastPage != null;
+		console.log("Last Page: " + lastPage);
 
 		return {continue: cont,
 				lastPage: lastPage};
 	},
 
-	render()
+	render: function()
 	{
 		var continueButton = null;
 
 		if(this.state.continue)
 		{
-			continueButton = <div className="StartButton" to={this.state.lastPage}>{"Continue"}</div>;
+			continueButton = <a className="StartButton" href={this.state.lastPage}>{"Continue"}</a>;
 		}
 
 		return	<div>

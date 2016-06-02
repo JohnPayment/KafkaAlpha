@@ -4,11 +4,10 @@
 TO DO LIST
 ==========
 
-Tier 1
- - Get Resource URLS from Evil-Sasha
-
-Tier 2
- - Set up progress saving and redirection
+DO THIS STUFF NEXT:
+ - do styling for existing elements
+ - Set up Minimap (image-based)
+ - Set up health bar
 
 Tier 3
  - Get inventory working

@@ -19,7 +19,12 @@ exports.truncateNumber = function(number)
 	return number;
 }
 
-exports.setContinuePoint = function(context)
+// Must have window defined
+exports.setContinuePoint = function()
 {
-	cookie.save("continue", context.context.router.getCurrentPathname());
+	if (typeof(document) != 'undefined')
+	{
+		console.log("Saving room progress");
+		cookie.save("continue", document.URL, {path: "KafkaAlpha"});
+	}
 }

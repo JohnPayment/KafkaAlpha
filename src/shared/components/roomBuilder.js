@@ -1,8 +1,10 @@
 import React from "react";
 
+var resources = require('resources');
+
 /**
  * props:
- * backgroundLayout - 10x10 grid which specifies the background tileset to use for each tile in the roomBuilder
+ * backgroundLayout - 8x8 grid which specifies the background tileset to use for each tile in the roomBuilder
  * gameObjects - a list of objects. All objects have the following parameters, with interactable objects having
  *               additional properties defined elsewhere.
  * 		posX - The object's horizontal position on the grid, from 0 to 9
@@ -22,9 +24,9 @@ var roomBuilder = React.createClass(
 		return {};
 	},
 
-	render()
+	render: function()
 	{
-		return	<span>
+		return	<span className="room">
 					{this.renderRows()}
 				</span>;
 	},
@@ -33,9 +35,9 @@ var roomBuilder = React.createClass(
 	{
 		var rows = [];
 
-		for(var i = 0; i < 10; ++i)
+		for(var i = 0; i < this.props.backgroundLayout.length; ++i)
 		{
-			rows.push(<span>{this.renderRow(i)}</span>);
+			rows.push(<span className="roomTileRow">{this.renderRow(i)}</span>);
 		}
 
 		return rows;
@@ -45,9 +47,9 @@ var roomBuilder = React.createClass(
 	{
 		var tiles = [];
 
-		for(var i = 0; i < 10; ++i)
+		for(var i = 0; i < this.props.backgroundLayout[index].length; ++i)
 		{
-			tiles.push(<span>{this.renderTile(index, i)}{this.renderObject(index, i)}</span>);
+			tiles.push(<span className="roomTile" style={this.renderTile(index, i)}>{this.renderObject(index, i)}</span>);
 		}
 
 		return tiles;
@@ -55,18 +57,19 @@ var roomBuilder = React.createClass(
 
 	renderTile: function(posy, posx)
 	{
-		return this.props.backgroundLayout[posy][posx];
+		return {"backgroundImage": "url(/" + resources.IMAGE_DIR + this.props.backgroundLayout[posy][posx].image + ")"};
 	},
 
 	renderObject: function(posy, posx)
 	{
+		/*
 		for(var i = 0; i < this.props.gameObjects.length; ++i)
 		{
 			if(this.props.gameObjects[i].posX == posx && this.props.gameObjects[i].posY == posy)
 			{
 				return this.props.gameObjects[i].image;
 			}
-		}
+		}*/
 
 		return null;
 	}

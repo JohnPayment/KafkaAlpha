@@ -1,38 +1,48 @@
 import React from "react";
 import cookie from 'react-cookie';
 
+var funct = require('./reactFunctions');
+
 var res = require("resources");
 
 var playerStats = React.createClass(
 {
 	getInitialState: function()
 	{
-		if (typeof(window) == 'undefined')
-		{
-			global.window = new Object();
-		}
+		var totalHP = cookie.load("totalHP", {path: "KafkaAlpha"});
+		var currentHP = cookie.load("currentHP", {path: "KafkaAlpha"});
 
-		var totalHP = cookie.load('totalHP');
-		var currentHP = cookie.load('currentHP');
 		if(totalHP == null)
 		{
+			console.log("setting new HP values");
 			totalHP = res.defaultHP;
 			currentHP = res.defaultHP;
 
-			cookie.save('totalHP', totalHP, {path: '/'});
-			cookie.save('currentHP', currentHP, {path: '/'});
+			cookie.save('totalHP', totalHP, {path: "KafkaAlpha"});
+			cookie.save('currentHP', currentHP, {path: "KafkaAlpha"});
+		} else
+		{
+			console.log("Current HP Value: " + currentHP);
 		}
 
-		var totalSP = cookie.load('totalSP');
-		var currentSP = cookie.load('currentSP');
+		var totalSP = cookie.load("totalSP", {path: "KafkaAlpha"});
+		var currentSP = cookie.load("currentSP", {path: "KafkaAlpha"});
+
 		if(totalSP == null)
 		{
+			console.log("setting new SP values");
+
 			totalSP = res.defaultSP;
 			currentSP = res.defaultSP;
 
-			cookie.save('totalSP', totalSP, {path: '/'});
-			cookie.save('currentSP', currentSP, {path: '/'});
+			cookie.save('totalSP', totalSP, {path: "KafkaAlpha"});
+			cookie.save('currentSP', currentSP, {path: "KafkaAlpha"});
+		} else
+		{
+			console.log("Current SP Value: " + currentSP);
 		}
+
+		funct.setContinuePoint();
 
 		return {totalHP: totalHP,
 				currentHP: currentHP,
@@ -40,15 +50,24 @@ var playerStats = React.createClass(
 				currentSP: currentSP};
 	},
 
-	render()
+	render: function()
 	{
-		return	<span>
+
+		var hpStyle = {
+			width: "calc(" + ((this.state.currentHP / this.state.totalHP) * 100) + "% - 4px)"
+		};
+
+		var spStyle = {
+			width: "calc(" + ((this.state.currentSP / this.state.totalSP) * 100) + "% - 4px)"
+		};
+
+		return	<span className="statContainer">
 					<span className="hpBar">
-						<span className="hpBarInterior">
+						<span className="hpBarInterior" style={hpStyle}>
 						</span>
 					</span>
-					<span className="spBar">
-						<span className="spBarInterior">
+					<span className="hpBar">
+						<span className="spBarInterior" style={spStyle}>
 						</span>
 					</span>
 				</span>;
