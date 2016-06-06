@@ -122,12 +122,15 @@
 }
 
 .gameObjectDesc {
+	display: inline-block;
 	text-align: center;
 
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	border-bottom: 1px solid #000000;
 
-	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .gameObjectActions {
