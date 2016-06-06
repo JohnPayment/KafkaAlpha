@@ -15,7 +15,12 @@ app.set('views', './view/');
 app.set('view engine', 'jade');
 
 // Server Modules
+var basement = require('./level-0/basement');
 var bedroom = require('./level-0/bedroom');
+var den = require('./level-0/den');
+var diningRoom = require('./level-0/diningRoom');
+var kitchen = require('./level-0/kitchen');
+var upstairs = require('./level-0/upstairs');
 
 var resources = require('resources');
 
@@ -54,7 +59,12 @@ app.get('/', function(req, res)
 //----------------------------------------------------------------------------------------------------------------------
 // User Pages
 //----------------------------------------------------------------------------------------------------------------------
+basement(app, Router, routes, React);
 bedroom(app, Router, routes, React);
+den(app, Router, routes, React);
+diningRoom(app, Router, routes, React);
+kitchen(app, Router, routes, React);
+upstairs(app, Router, routes, React);
 
 // Redirect to Index Page on linking to a page which does not exist.
 /*app.use(function(req, res, next)

@@ -1,7 +1,7 @@
 module.exports = function(app, Router, routes, React)
 {
 	//----------------------------------------------------------------------------------------------------------------------
-	// Basement
+	// Bedroom
 	//----------------------------------------------------------------------------------------------------------------------
 	app.get('/level-0/bedroom', function (req, res)
 	{
@@ -15,7 +15,7 @@ module.exports = function(app, Router, routes, React)
 			var props = {userData: userData};
 
 			let content = React.renderToString(<Handler userData={userData}/>);
-			res.render('level-0', {	content: content,
+			res.render('index', {	content: content,
 									props: JSON.stringify(props),
 									title: "Kafka Alpha - Bedroom"});
 		});
