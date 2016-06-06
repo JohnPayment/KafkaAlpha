@@ -8,10 +8,8 @@ export default class AppHandler extends React.Component
 {
 	render()
 	{
-		var objects = [0];
-
 		return	<div id="container">
-					<RoomBuilder backgroundLayout={roomLayout.layout} gameObjects={objects} />
+					<RoomBuilder backgroundLayout={roomLayout.layout} gameObjects={roomLayout.gameObjects} />
 				</div>;
 	}
 }

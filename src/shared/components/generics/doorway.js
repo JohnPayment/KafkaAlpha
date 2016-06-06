@@ -1,5 +1,6 @@
 import React from "react";
-import {browserHistory} from 'react-router';
+import {Link} from 'react-router';
+
 
 var GameObject = require('./gameObject');
 
@@ -20,9 +21,18 @@ var resources = require('resources');
  */
 var doorway = React.createClass(
 {
+	contextTypes: {
+    	history: React.PropTypes.object
+	},
+
 	getInitialState: function()
 	{
-		actions = [];
+		if (typeof(window) == 'undefined')
+		{
+			global.window = new Object();
+		}
+		
+		var actions = [];
 
 		if(this.props.actions != null)
 		{
@@ -30,9 +40,11 @@ var doorway = React.createClass(
 		}
 
 		var link =	{
-						image: "doorAction",
+						image: "doorAction.png",
 						result: this.linkRoom
 					};
+
+		actions.push(link);
 
 		return {actions: actions};
 	},
@@ -42,9 +54,11 @@ var doorway = React.createClass(
 		return	<GameObject description={this.props.description} image={this.props.image} actions={this.state.actions} />;
 	},
 
-	linkRoom: function()
+	linkRoom: function(event)
 	{
-		browserHistory.push(this.props.destination);
+		event.preventDefault();
+
+		window.location = this.props.destination;
 	}
 });
 

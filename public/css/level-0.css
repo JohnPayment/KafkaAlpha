@@ -80,6 +80,8 @@
 
 .roomTileRow {
 	display: block;
+	height: 102px;
+
 	margin: 0 auto;
 }
 
@@ -90,4 +92,56 @@
 
 	background: #222222;
 	border: 1px solid #000000;
+}
+
+.gameObjectContainer {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+}
+
+.gameObject {
+	display: inline-block;
+	width: inherit;
+	height: inherit;
+}
+
+.gameObjectMenu {
+	position: absolute;;
+	display: block;
+
+	width: 200px;
+	left: -50px;
+	top: 110px;
+
+	text-align: center;
+
+	background: #555555;
+	border-radius: 15px;
+}
+
+.gameObjectDesc {
+	text-align: center;
+
+	padding: 10px;
+	border-bottom: 1px solid #000000;
+
+	margin-bottom: 10px;
+}
+
+.gameObjectActions {
+	display: block;
+
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+.gameObjectAction {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+
+	margin-left: 5px;
+	margin-right: 5px;
 }

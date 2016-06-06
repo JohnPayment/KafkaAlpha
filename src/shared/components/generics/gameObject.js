@@ -18,9 +18,9 @@ var gameObject = React.createClass(
 {
 	getInitialState: function()
 	{
-		description = "";
-		image = "";
-		actions = [];
+		var description = "";
+		var image = "";
+		var actions = [];
 
 		if(this.props.description != null)
 		{
@@ -45,11 +45,11 @@ var gameObject = React.createClass(
 
 	render: function()
 	{
-		objectMenu = null;
+		var objectMenu = null;
 		if(this.state.active)
 		{
 			objectMenu = 	<span className="gameObjectMenu">
-								<span className="gameObjectDesc" onClick={this.toggleMenu}>
+								<span className="gameObjectDesc">
 									{this.state.desc}
 								</span>
 								<span className="gameObjectActions">
@@ -59,7 +59,7 @@ var gameObject = React.createClass(
 		}
 
 		return	<span className="gameObjectContainer">
-					<span className="gameObject" style={{backgroundImage: "url(" + resources.IMAGE_DIR + this.state.image + ")"}}>
+					<span className="gameObject" style={{backgroundImage: "url(/" + resources.IMAGE_DIR + this.state.image + ")"}} onClick={this.toggleMenu}>
 					</span>
 					{objectMenu}
 				</span>;
@@ -73,7 +73,7 @@ var gameObject = React.createClass(
 		{
 			if(this.checkActionConditions(this.state.actions[i]))
 			{
-				actions.push(<span key={i} className="gameObjectAction" style={{backgroundImage: "url(" + resources.IMAGE_DIR + this.state.actions[i].image + ")"}} onClick={this.state.actions[i].result}></span>);
+				actions.push(<span key={i} className="gameObjectAction" style={{backgroundImage: "url(/" + resources.IMAGE_DIR + this.state.actions[i].image + ")"}} onClick={this.state.actions[i].result}></span>);
 			}
 		}
 

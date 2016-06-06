@@ -1,5 +1,5 @@
 import React from "react";
-var doorway = require('../../generics/doorway');
+var Doorway = require('../../generics/doorway');
 
 var blk = 	{
 				image: "blackdrop"
@@ -22,10 +22,10 @@ exports.layout = 	[
 						[flr, flr, flr, flr, flr, flr, flr, flr]
 					];
 
-var kitchenDoorComponent = <doorway description="Doorway to Kitchen." image="door" destination="level-0/kitchen" />;
+var kitchenDoorComponent = <Doorway description="Doorway to Kitchen." image="door.png" destination="/level-0/kitchen" />;
 var kitchenDoor = 	{
 						posX: 7,
-						posY: 7,
+						posY: 6,
 						component: kitchenDoorComponent
 					};
 
