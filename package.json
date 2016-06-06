@@ -1,6 +1,9 @@
 {
   "name": "kafkaalpha",
   "version": "1.0.0",
+  "engine": {
+	"node": "v0.10.25"
+  },
   "description": "Demo for node-powered browser game",
   "main": "index.js",
   "scripts": {
