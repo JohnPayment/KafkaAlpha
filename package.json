@@ -17,7 +17,7 @@
     "start-pro": "npm run build && npm run build-webpack && npm run server",
     "start-dev": "npm run watch-js  & npm run build-webpack-dev & npm run dev-server & npm run server-dev",
     "stop": "forever stop lib/server/server.js",
-    "build": "npm run clean && babel-node src -d lib",
+    "build": "npm run clean && ./node_modules/.bin/babel src -d lib",
     "build-webpack": "webpack",
     "build-webpack-dev": "webpack --progress --colors --watch"
   },
